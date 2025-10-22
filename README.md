@@ -27,9 +27,8 @@
 
 -   **React** 18.2.0
 -   **JavaScript (ES6+)**
--   **Recharts** 2.1.16 - 차트 라이브러리
--   **React Kakao Maps SDK** 1.1.5 - 지도 시각화
--   **Fetch API** - HTTP 요청 처리
+-   **Recharts** - 차트 라이브러리
+-   **React Kakao Maps SDK** - 지도 시각화
 
 ## 🚀 시작하기
 
