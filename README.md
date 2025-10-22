@@ -108,4 +108,13 @@ npm start
 
 ---
 
+## 📷 이미지 출처
+
+지도 마커 아이콘:
+
+-   Icons by [Flaticon](https://www.flaticon.com/)
+-   Icons by [Icons8](https://icons8.com/)
+
+---
+
 **Made with ❤️ using React & TypeScript**

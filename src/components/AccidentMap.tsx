@@ -16,7 +16,7 @@ const ACCIDENT_ICONS = {
         'https://img.icons8.com/external-outline-chattapat-/512/external-accident-car-accident-outline-chattapat--4.png',
     추돌: 'https://img.icons8.com/external-others-bomsymbols-/512/external-accident-car-others-bomsymbols--2.png',
     측면충돌: 'https://img.icons8.com/ios-filled/512/car-crash.png',
-    기타: 'https://cdn-icons-png.flaticon.com/512/2917/2917995.png',
+    기타: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
 };
 
 const INCHEON_CENTER = {

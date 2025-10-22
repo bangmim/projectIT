@@ -159,7 +159,15 @@ function App() {
                 <h1>사고 다발 지역 조회</h1>
 
                 <div>
-                    <Box sx={{ minWidth: 120 }}>
+                    <Box
+                        sx={{
+                            minWidth: 120,
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                            justifyContent: 'center',
+                            gap: 1,
+                        }}
+                    >
                         <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
                             <InputLabel id="city-select-label">지역</InputLabel>
                             <Select onChange={handleCitySelect} value={selectedCity || ''}>
@@ -183,18 +191,20 @@ function App() {
                                 ))}
                             </Select>
                         </FormControl>
-                        <button className="ui animated button" onClick={toggleMenuVisibility} tabIndex={0}>
-                            <div className="visible content">조회</div>
-                            <div className="hidden content">
-                                <i className="search icon"></i>
-                            </div>
-                        </button>
-                        <button className="ui animated button" onClick={handleReset} tabIndex={0}>
-                            <div className="visible content">Reset</div>
-                            <div className="hidden content">
-                                <i className="undo icon"></i>
-                            </div>
-                        </button>
+                        <div style={{ marginBottom: '8px' }}>
+                            <button className="ui animated button" onClick={toggleMenuVisibility} tabIndex={0}>
+                                <div className="visible content">조회</div>
+                                <div className="hidden content">
+                                    <i className="search icon"></i>
+                                </div>
+                            </button>
+                            <button className="ui animated button" onClick={handleReset} tabIndex={0}>
+                                <div className="visible content">Reset</div>
+                                <div className="hidden content">
+                                    <i className="undo icon"></i>
+                                </div>
+                            </button>
+                        </div>
                     </Box>
                 </div>
             </div>
