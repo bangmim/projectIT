@@ -4,6 +4,8 @@
 
 **배포된 사이트**: [https://bangmim.github.io/projectIT](https://bangmim.github.io/projectIT)
 
+> 💡 **원본 코드 보기**: 리팩토링 전 JavaScript 버전은 [main 브랜치](https://github.com/bangmim/projectIT/tree/main)에서 확인할 수 있습니다.
+
 ## 🎓 프로젝트 배경
 
 이 프로젝트는 코리아IT아카데미학원에서 프론트엔드 개발자 과정 수료하며 진행한 그룹 프로젝트입니다.
@@ -53,58 +55,16 @@ npm start
 
 ---
 
-## 🔄 코드 리팩토링 (2025.10.22)
+## 🔥 최근 주요 개선 사항 (2025. 10.)
 
-프로젝트 완성 후 코드 품질 향상을 위해 전면적인 리팩토링을 진행했습니다.
+실무 경험과 추가 학습을 바탕으로 코드 품질을 개선하기 위해 원본 프로젝트를 **개인적으로** 업데이트했습니다.
 
-> 💡 **원본 코드 보기**: 리팩토링 전 JavaScript 버전은 [main 브랜치](https://github.com/bangmim/projectIT/tree/main)에서 확인할 수 있습니다.
+-   **TypeScript 마이그레이션**: JavaScript → TypeScript 전환, 타입 안정성 확보
+-   **컴포넌트 분리**: 1000+ 줄의 단일 파일 → 5개 모듈로 관심사 분리
+-   **변수명 개선**: 한글/불명확한 이름(`data1`, `선택`) → 명확한 영문명(`selectedCity`, `incheonData`)
+-   **코드 최적화**: 중복 로직 제거, 상수화, 헬퍼 함수 추출
 
-### 1. TypeScript 마이그레이션
-
-**배경**: JavaScript로 작성된 1000+ 줄의 코드를 TypeScript로 전환  
-**효과**: 타입 안정성 확보, 컴파일 시점 에러 감지, IDE 자동완성 개선  
-**작업 내용**:
-
--   타입 정의 파일 분리 (`types.ts`)
--   API 응답, 컴포넌트 Props, 이벤트 핸들러 타입 명시
--   위도/경도 데이터 타입 변환 로직 추가
-
-### 2. 컴포넌트 구조 개선
-
-**배경**: 1000+ 줄의 App.tsx가 유지보수 어려움  
-**효과**: 가독성 향상, 재사용성 증가, 관심사 분리  
-**작업 내용**:
-
--   `AccidentChart.tsx` - 차트 시각화 로직 분리 (85줄)
--   `AccidentMap.tsx` - 지도 마커 표시 로직 분리, 아이콘 상수화 (101줄)
--   `AccidentTable.tsx` - 테이블 렌더링 로직 분리, 재사용 컴포넌트화 (72줄)
--   `App.tsx` - 상태 관리와 UI 레이아웃만 담당 (212줄)
-
-### 3. 변수명 개선
-
-**배경**: 한글 변수명과 불분명한 이름(data1, data2, data3)으로 인한 코드 이해 어려움  
-**효과**: 코드의 의도를 명확히 전달, 국제 표준 준수  
-**주요 변경**:
-
--   Props: `data1, data2, data3` → `selectedCity, selectedDistrict, accidentType`
--   데이터 필터: `선택, 선택1` → `incheonData, filteredByDistrict`
--   핸들러: `handleSelect, handlerest` → `handleCitySelect, handleReset`
--   리스트: `selectList, selectGu` → `cityList, districtList`
--   통계: `횡단중사망자` → `crossingDeaths`
-
-### 4. 코드 최적화
-
--   사용하지 않는 import 10개 이상 제거
--   반복되는 filter/map 로직을 헬퍼 함수로 통합 (`getAccidentsByType`, `convertToMarkerData`)
--   매직 넘버/문자열을 상수로 추출 (`ACCIDENT_ICONS`, `INCHEON_CENTER`)
--   카카오 맵 API 프로토콜을 https://로 명시
-
-**최종 결과**:
-
--   코드 라인: 1078줄 → 494줄 (54% 감소)
--   파일 구조: 단일 파일 → 5개 모듈 (관심사 분리)
--   에러/경고: 0개
--   유지보수성: 대폭 향상
+**결과**: 1078줄 → 494줄 (54% 감소), 유지보수성 대폭 향상
 
 ---
 
