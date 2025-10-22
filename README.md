@@ -16,6 +16,48 @@
 
 이 프로젝트를 통해 프론트엔드 개발의 전반적인 프로세스를 경험하고, 팀 프로젝트 리더로서의 역량을 키울 수 있었습니다.
 
+### 🔄 주요 개선 사항
+
+프로젝트 완성 후 코드 품질 향상을 위해 다음과 같은 리팩토링 작업을 진행했습니다:
+
+#### 1. TypeScript 마이그레이션
+
+-   **배경**: JavaScript로 작성된 1000+ 줄의 코드를 TypeScript로 전환
+-   **효과**: 타입 안정성 확보, 컴파일 시점 에러 감지, IDE 자동완성 개선
+-   **작업 내용**:
+    -   타입 정의 파일 분리 (`types.ts`)
+    -   API 응답, 컴포넌트 Props, 이벤트 핸들러 타입 명시
+    -   위도/경도 데이터 타입 변환 로직 추가
+
+#### 2. 컴포넌트 구조 개선
+
+-   **배경**: 1000+ 줄의 App.tsx가 유지보수 어려움
+-   **효과**: 가독성 향상, 재사용성 증가, 관심사 분리
+-   **작업 내용**:
+    -   `AccidentChart.tsx` - 차트 시각화 로직 분리 (170줄 → 80줄)
+    -   `AccidentMap.tsx` - 지도 마커 표시 로직 분리, 반복 코드 제거
+    -   `AccidentTable.tsx` - 테이블 렌더링 로직 분리, 재사용 가능한 컴포넌트 구조
+    -   App.tsx는 상태 관리와 라우팅만 담당 (160줄)
+
+#### 3. 변수명 개선 (가독성 향상)
+
+-   **배경**: 한글 변수명과 불분명한 이름(data1, data2, data3)으로 인한 코드 이해 어려움
+-   **효과**: 코드의 의도를 명확히 전달, 국제 표준 준수
+-   **변경 예시**:
+    -   `선택`, `선택1` → `incheonData`, `filteredByDistrict`
+    -   `data1`, `data2`, `data3` → `selectedCity`, `selectedDistrict`, `accidentType`
+    -   `횡단중사망자` → `crossingDeaths`
+    -   `selectList`, `selectGu` → `cityList`, `districtList`
+
+#### 4. 코드 최적화
+
+-   사용하지 않는 import 제거 (PieChart, Radar, Image 등 10개 이상)
+-   사용하지 않는 변수 제거
+-   반복되는 filter/map 로직을 헬퍼 함수로 통합
+-   카카오 맵 API 프로토콜을 https://로 명시
+
+**결과**: 1000+ 줄 → 4개의 모듈로 분리 (총 ~500줄), 에러 0개, 유지보수성 대폭 향상
+
 ### 주요 기능
 
 -   📊 **차트 분석**: 사고 유형별 (횡단중, 추돌, 측면충돌, 공작물충돌, 기타) 사망자, 부상자, 중상자 수 통계 시각화
@@ -26,7 +68,7 @@
 ## 🛠️ 기술 스택
 
 -   **React** 18.2.0
--   **JavaScript (ES6+)**
+-   **TypeScript** 4.9.3
 -   **Recharts** - 차트 라이브러리
 -   **React Kakao Maps SDK** - 지도 시각화
 
@@ -53,4 +95,4 @@ npm start
 
 ---
 
-**Made with ❤️ using React**
+**Made with ❤️ using React & TypeScript**
