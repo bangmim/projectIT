@@ -153,6 +153,18 @@ function App() {
 
     return (
         <div>
+            {/* GitHub 링크 - 우측 상단 고정 */}
+            <a
+                href="https://github.com/bangmim/projectIT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-corner"
+                aria-label="View source on GitHub"
+            >
+                <Icon name="github" size="big" />
+                <span className="github-text">Source Code</span>
+            </a>
+
             <div style={{ textAlign: 'center', marginTop: '150px' }}>
                 <Divider hidden />
                 <h1>&#128664; 자동차 &#128664;</h1>
